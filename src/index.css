@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7f9;
+  --bg2: #ffffff;
+  --card: rgba(15, 23, 42, 0.04);
+  --line: rgba(15, 23, 42, 0.12);
+  --text: #0f172a;
+  --muted: #526075;
+  --accent: #0f766e;
+  --accent2: #6d28d9;
+  --dot: 15, 118, 110;
+  --shadow: 0 20px 40px -22px rgba(15, 23, 42, 0.25);
+  --radius: 18px;
+  --font: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+.dark {
+  --bg: #0b0d10;
+  --bg2: #12161b;
+  --card: rgba(255, 255, 255, 0.04);
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #e8ecf1;
+  --muted: #98a2b0;
+  --accent: #5eead4;
+  --accent2: #a78bfa;
+  --dot: 94, 234, 212;
+  --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-alpha: color-mix(in srgb, var(--bg) 72%, transparent);
+  --color-bg2: var(--bg2);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+  --dot: var(--dot);
+  --shadow: var(--shadow);
+  --radius: var(--radius);
+  --font-sans: var(--font);
+  --font-mono: var(--mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- efeitos do portfolio ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.term-line {
+  opacity: 0;
+  animation: termIn 0.4s forwards;
+}
+@keyframes termIn {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.float {
+  animation: float 7s ease-in-out infinite;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.pulse-dot {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% {
+    transform: scale(1.7);
+    opacity: 0.5;
+  }
+}
+
+.chip-tech {
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+.chip-tech:hover {
+  transform: translateY(-3px) rotate(-1.5deg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-shot {
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.project-shot:hover {
+  transform: perspective(900px) rotateX(2deg) rotateY(-3deg) translateY(-4px);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal,
+  .term-line {
+    opacity: 1;
+    transform: none;
+  }
+}
