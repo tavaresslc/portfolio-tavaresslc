@@ -2,7 +2,7 @@
 
 Portfólio profissional responsivo com **Sobre mim (PT/EN)**, **linha do tempo de projetos**, **experiências** e **contato** (ícones + formulário com envio por e-mail). Conteúdo baseado no perfil [github.com/tavaresslc](https://github.com/tavaresslc).
 
-🔗 **Site publicado:** _https://SEU-PROJETO.vercel.app_
+🔗 **Site publicado:** _[https://portfolio-tavaresslc-ny9igyrlb-tavaresslcs-projects.vercel.app/](https://portfolio-tavaresslc-ny9igyrlb-tavaresslcs-projects.vercel.app/)_
 
 ## Destaques
 
