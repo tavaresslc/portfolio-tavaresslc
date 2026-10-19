@@ -1,14 +1,10 @@
-interface ImportMetaEnv {
-  readonly VITE_NAME: string;
-  readonly VITE_EMAIL: string;
-  readonly VITE_GITHUB: string;
-  readonly VITE_LINKEDIN: string;
-  readonly VITE_WHATSAPP?: string;
-}
-
 declare global {
-  interface ImportMeta {
-    readonly env: ImportMetaEnv;
+  interface ImportMetaEnv {
+    readonly VITE_NAME: string;
+    readonly VITE_EMAIL: string;
+    readonly VITE_GITHUB: string;
+    readonly VITE_LINKEDIN: string;
+    readonly VITE_WHATSAPP?: string;
   }
 }
 
